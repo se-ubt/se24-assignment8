@@ -42,3 +42,36 @@ curl --request DELETE http://localhost:8080/list
 ```bash
 curl http://localhost:8080/list/max-length
 ```
+
+## Docker
+
+### Building an image from the Dockerfile
+
+```bash
+docker build -t list-app .
+```
+
+`-t` names (and optionally tags) the image in the `name:tag` format.
+
+### Create and run a Docker container based on the image
+
+```bash
+docker run -it --rm list-app
+```
+
+`-it`  runs a container in interactive mode with a pseudo-TTY (terminal).
+`--rm` automatically removes the container (and its associated resources) if it exists already.<br/>
+
+### Using Docker compose to run the app together with a Postgres DB
+
+Create and start containers:
+
+```bash
+docker-compose up
+```
+
+Stop and remove containers and networks:
+
+```bash
+docker-compose down
+```
