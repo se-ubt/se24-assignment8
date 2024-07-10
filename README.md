@@ -53,6 +53,12 @@ docker build -t list-app .
 
 `-t` names (and optionally tags) the image in the `name:tag` format.
 
+Alternative: Use Spring Boot's `build-image` goal:
+
+```bash
+mvn spring-boot:build-image
+```
+
 ### Create and run a Docker container based on the image
 
 ```bash
