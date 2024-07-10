@@ -48,7 +48,7 @@ curl http://localhost:8080/list/max-length
 ### Building an image from the Dockerfile
 
 ```bash
-docker build -t list-app .
+docker build -t list-app:latest .
 ```
 
 `-t` names (and optionally tags) the image in the `name:tag` format.
@@ -62,13 +62,19 @@ mvn spring-boot:build-image
 ### Create and run a Docker container based on the image
 
 ```bash
-docker run -it --rm list-app
+docker run -it --rm list-app:latest
 ```
 
 `-it`  runs a container in interactive mode with a pseudo-TTY (terminal).
 `--rm` automatically removes the container (and its associated resources) if it exists already.<br/>
 
-### Using Docker compose to run the app together with a Postgres DB
+### Using Docker compose to build the image and run the app together with a Postgres DB
+
+Build container image:
+
+```bash
+docker-compose build
+```
 
 Create and start containers:
 
